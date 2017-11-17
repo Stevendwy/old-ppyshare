@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>支付成功</title>
+    <link rel="stylesheet" href="/ppy/css/share170623/success.css">
+</head>
+<body>
+    <div id="success">
+        <span id="remind">零零汽年卡支付成功！</span>
+        <div id="container-info-background">
+            <div id="container-info">
+                <div id="address">网页版地址：www.007vin.com</div>
+                <div id="username">账号：13812341234 （手机号码）</div>
+                <div id="password">密码：341234 （手机后6位）</div>
+                <div id="date">有效期至： （手机后6位）</div>
+            </div>
+        </div>
+        <div id="download-remind">
+            <div>您在使用网页版零零汽的同时，</div>
+            <span>还可以使用汽配大师APP，下载地址：</span>
+        </div>
+        <div id="container-downloads">
+            <input type="button" id="apple" onclick="download('apple')" />
+        </div>
+    </div>
+
+    <script src="/ppy/js/share170623/utils.js"></script>
+    <script>
+        document.getElementById("username").innerHTML = "账号：" + params.phone + " （手机号码）"
+        document.getElementById("password").innerHTML = "密码：" + params.phone.substring(11 - 6) + " （手机后6位）"
+        document.getElementById("date").innerHTML = "有效期至：" + params.valid_date
+
+        function download(type) {
+            location.href = "https://itunes.apple.com/cn/app/%E6%B1%BD%E9%85%8D%E5%A4%A7%E5%B8%88/id1210603873?mt=8"
+        }
+    </script>
+</body>
+</html>
